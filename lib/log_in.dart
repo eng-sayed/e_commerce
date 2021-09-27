@@ -1,4 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:task2/register.dart';
+import 'package:task2/reset_password.dart';
 
 class LogIn extends StatefulWidget {
   static const id = 'LogIn';
@@ -35,11 +39,78 @@ class _LogInState extends State<LogIn> {
             TextFormField(
               decoration: InputDecoration(
                 labelText: "Enter Your Email",
+                filled: true,
+                fillColor: Colors.grey[200],
                 suffixIcon: Icon(Icons.email),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: "Enter Your Password",
+                filled: true,
+                fillColor: Colors.grey[200],
+                suffixIcon: Icon(Icons.lock),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            FlatButton(
+                onPressed: () {},
+                child: Container(
+                    height: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      color: Colors.deepPurple,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Login",
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ],
+                    ))),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, ResetPassword.id);
+              },
+              child: Text(
+                "Forget Paasword",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.deepPurpleAccent),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account ?",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, Register.id);
+                    },
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.deepPurpleAccent),
+                    ))
+              ],
             ),
           ],
         ),

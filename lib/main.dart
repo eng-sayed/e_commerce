@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task2/log_in.dart';
+import 'package:task2/register.dart';
+import 'package:task2/reset_password.dart';
 import 'log_in.dart';
 
 void main() {
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
         home: LogIn(),
         routes: {
           LogIn.id: (context) => LogIn(),
+          Register.id: (context) => Register(),
+          ResetPassword.id:(context)=>ResetPassword(),
         });
   }
 }
